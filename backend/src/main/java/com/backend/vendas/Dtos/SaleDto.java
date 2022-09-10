@@ -1,15 +1,12 @@
-package com.backend.vendas.Models;
+package com.backend.vendas.Dtos;
 
 import java.util.Date;
-import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "tb_sale")
-public class Sale {
+public class SaleDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,10 +16,10 @@ public class Sale {
     private Double amount;
     private Date date;
 
-    public Sale() {
+    public SaleDto() {
     }
 
-    public Sale(Long id, String seller_name, Integer visited, Integer deals, Double amount, Date date) {
+    public SaleDto(Long id, String seller_name, Integer visited, Integer deals, Double amount, Date date) {
         this.id = id;
         this.seller_name = seller_name;
         this.visited = visited;
@@ -78,5 +75,3 @@ public class Sale {
     public void setDate(Date date) {
         this.date = date;
     }
-
-}
